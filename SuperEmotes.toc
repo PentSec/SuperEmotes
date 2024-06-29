@@ -1,0 +1,9 @@
+## Interface: 30300
+## Title: |TInterface\Addons\SuperEmotes\Pepes\EZ:0|tSuper Emotes|TInterface\Addons\SuperEmotes\Pepes\EZ:0|t
+## Author: Sitoz
+## Version: v3
+## SavedVariablesPerCharacter: Emoticons_Settings Emoticons_Eyecandy
+UIDropDownMenuTemplates.xml
+UIDropDownMenu.lua
+SuperEmotes.lua
+SuperEmotes.xml
