@@ -1,39 +1,41 @@
-<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.blizzard.com/wow/ui/
-..\..\FrameXML\UI.xsd">
+<Ui xmlns="http://www.blizzard.com/wow/ui/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.blizzard.com/wow/ui/ ..\..\FrameXML\UI.xsd">
 
-		<!-- Copied from OptionSliderTemplate 2.4.3 because Blizzard is ......
+	<!-- Copied from OptionSliderTemplate 2.4.3 because Blizzard is ......
 Check to see if they use consistent fontsizes in build > 8982 and remove this template.
 Revert PowaBarSliderTemplate to inherit from OptionsSliderTemplate if it's fixed as well.  -->
-  <Slider name="OptionsSmallSliderTemplate" orientation="HORIZONTAL" virtual="true" enableMouse="true">
+	<Slider name="OptionsSmallSliderTemplate" orientation="HORIZONTAL" virtual="true"
+		enableMouse="true">
 		<Size>
-			<AbsDimension x="144" y="17"/>
+			<AbsDimension x="144" y="17" />
 		</Size>
 		<HitRectInsets>
-			<AbsInset left="0" right="0" top="-10" bottom="-10"/>
+			<AbsInset left="0" right="0" top="-10" bottom="-10" />
 		</HitRectInsets>
-		<Backdrop bgFile="Interface\Buttons\UI-SliderBar-Background" edgeFile="Interface\Buttons\UI-SliderBar-Border" tile="true">
+		<Backdrop bgFile="Interface\Buttons\UI-SliderBar-Background"
+			edgeFile="Interface\Buttons\UI-SliderBar-Border" tile="true">
 			<EdgeSize>
-				<AbsValue val="8"/>
+				<AbsValue val="8" />
 			</EdgeSize>
 			<TileSize>
-				<AbsValue val="8"/>
+				<AbsValue val="8" />
 			</TileSize>
 			<BackgroundInsets>
-				<AbsInset left="3" right="3" top="6" bottom="6"/>
+				<AbsInset left="3" right="3" top="6" bottom="6" />
 			</BackgroundInsets>
 		</Backdrop>
 		<Layers>
 			<Layer level="ARTWORK">
 				<FontString name="$parentText" inherits="GameFontNormalSmall">
 					<Anchors>
-						<Anchor point="BOTTOM" relativePoint="TOP"/>
+						<Anchor point="BOTTOM" relativePoint="TOP" />
 					</Anchors>
 				</FontString>
 				<FontString name="$parentLow" inherits="GameFontHighlightSmall" text="LOW">
 					<Anchors>
 						<Anchor point="TOPLEFT" relativePoint="BOTTOMLEFT">
 							<Offset>
-								<AbsDimension x="0" y="3"/>
+								<AbsDimension x="0" y="3" />
 							</Offset>
 						</Anchor>
 					</Anchors>
@@ -42,7 +44,7 @@ Revert PowaBarSliderTemplate to inherit from OptionsSliderTemplate if it's fixed
 					<Anchors>
 						<Anchor point="TOPRIGHT" relativePoint="BOTTOMRIGHT">
 							<Offset>
-								<AbsDimension x="0" y="3"/>
+								<AbsDimension x="0" y="3" />
 							</Offset>
 						</Anchor>
 					</Anchors>
@@ -55,43 +57,48 @@ Revert PowaBarSliderTemplate to inherit from OptionsSliderTemplate if it's fixed
 		</Scripts>
 		<ThumbTexture name="$parentThumb" file="Interface\Buttons\UI-SliderBar-Button-Horizontal">
 			<Size>
-				<AbsDimension x="32" y="32"/>
+				<AbsDimension x="32" y="32" />
 			</Size>
 		</ThumbTexture>
 	</Slider>
-	
-  <Slider name="PowaBarSliderTemplate"
-          inherits="OptionsSmallSliderTemplate"
-          virtual="true">
-    <Scripts>
-    </Scripts>
-  </Slider>
 
-	<Frame name="EmoticonsOptionsControlsPanel" hidden="false" parent="InterfaceOptionsFramePanelContainer">
+	<Slider name="PowaBarSliderTemplate"
+		inherits="OptionsSmallSliderTemplate"
+		virtual="true">
+		<Scripts>
+		</Scripts>
+	</Slider>
+
+	<Frame name="EmoticonsOptionsControlsPanel" hidden="false"
+		parent="InterfaceOptionsFramePanelContainer">
 		<Layers>
 			<Layer level="ARTWORK">
-				<FontString name="$parentTitle" text="Master Chat Emotes config" inherits="GameFontNormalLarge" justifyh="LEFT" justifyv="TOP">
+				<FontString name="$parentTitle" text="Master Chat Emotes config"
+					inherits="GameFontNormalLarge" justifyh="LEFT" justifyv="TOP">
 					<Anchors>
 						<Anchor point="TOPLEFT">
 							<Offset>
-								<AbsDimension x="14" y="-8"/>
+								<AbsDimension x="14" y="-8" />
 							</Offset>
 						</Anchor>
 					</Anchors>
 				</FontString>
-				<FontString name="$parentSubText" text="Select channels in which you want to see the Emoticons . Note: General, Trade, Localdefence etc all come under the category of 'Channels' . " inherits="GameFontHighlightSmall" nonSpaceWrap="true" maxLines="3" justifyh="LEFT" justifyv="TOP">
+				<FontString name="$parentSubText"
+					text="Select channels in which you want to see the Emoticons . Note: General, Trade, Localdefence etc all come under the category of 'Channels' . "
+					inherits="GameFontHighlightSmall" nonSpaceWrap="true" maxLines="3"
+					justifyh="LEFT" justifyv="TOP">
 					<Size>
-						<AbsDimension y="32" x="0"/>
+						<AbsDimension y="32" x="0" />
 					</Size>
 					<Anchors>
 						<Anchor point="TOPLEFT" relativeTo="$parentTitle" relativePoint="BOTTOMLEFT">
 							<Offset>
-								<AbsDimension x="0" y="-8"/>
+								<AbsDimension x="0" y="-8" />
 							</Offset>
 						</Anchor>
 						<Anchor point="RIGHT">
 							<Offset>
-								<AbsDimension x="-32" y="0"/>
+								<AbsDimension x="-32" y="0" />
 							</Offset>
 						</Anchor>
 					</Anchors>
@@ -102,22 +109,22 @@ Revert PowaBarSliderTemplate to inherit from OptionsSliderTemplate if it's fixed
 			<OnLoad>
 				self.name = "MasterEmotes";
 				InterfaceOptions_AddCategory(self);
-				
+
 				self:RegisterEvent("ADDON_LOADED");
 				self:SetScript("OnEvent",Emoticons_OnEvent);
 			</OnLoad>
 			<OnShow>
 				Emoticons_OptionsWindow_OnShow(self);
 			</OnShow>
-			
-			
-		</Scripts>	
+
+
+		</Scripts>
 		<Frames>
 			<CheckButton name="$parentCHAT_MSG_SAY" inherits="ChatConfigCheckButtonTemplate">
 				<Anchors>
 					<Anchor point="TOPLEFT" relativeTo="$parentSubText" relativePoint="BOTTOMLEFT">
 						<Offset>
-							<AbsDimension x="-2" y="0"/>
+							<AbsDimension x="-2" y="0" />
 						</Offset>
 					</Anchor>
 				</Anchors>
@@ -130,11 +137,13 @@ Revert PowaBarSliderTemplate to inherit from OptionsSliderTemplate if it's fixed
 					</OnClick>
 				</Scripts>
 			</CheckButton>		
-			<CheckButton name="$parentCHAT_MSG_YELL" inherits="ChatConfigCheckButtonTemplate">
+			<CheckButton
+				name="$parentCHAT_MSG_YELL" inherits="ChatConfigCheckButtonTemplate">
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="$parentCHAT_MSG_SAY" relativePoint="BOTTOMLEFT">
+					<Anchor point="TOPLEFT" relativeTo="$parentCHAT_MSG_SAY"
+						relativePoint="BOTTOMLEFT">
 						<Offset>
-							<AbsDimension x="0" y="0"/>
+							<AbsDimension x="0" y="0" />
 						</Offset>
 					</Anchor>
 				</Anchors>
@@ -145,13 +154,15 @@ Revert PowaBarSliderTemplate to inherit from OptionsSliderTemplate if it's fixed
 					<OnClick>
 						Emoticons_SetType("CHAT_MSG_YELL",self:GetChecked());
 					</OnClick>
-				</Scripts>			
+				</Scripts>
 			</CheckButton>
-			<CheckButton name="$parentCHAT_MSG_GUILD" inherits="ChatConfigCheckButtonTemplate">
+			<CheckButton
+				name="$parentCHAT_MSG_GUILD" inherits="ChatConfigCheckButtonTemplate">
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="$parentCHAT_MSG_YELL" relativePoint="BOTTOMLEFT">
+					<Anchor point="TOPLEFT" relativeTo="$parentCHAT_MSG_YELL"
+						relativePoint="BOTTOMLEFT">
 						<Offset>
-							<AbsDimension x="0" y="0"/>
+							<AbsDimension x="0" y="0" />
 						</Offset>
 					</Anchor>
 				</Anchors>
@@ -164,11 +175,13 @@ Revert PowaBarSliderTemplate to inherit from OptionsSliderTemplate if it's fixed
 					</OnClick>
 				</Scripts>
 			</CheckButton>
-			<CheckButton name="$parentCHAT_MSG_OFFICER" inherits="ChatConfigCheckButtonTemplate">
+			<CheckButton
+				name="$parentCHAT_MSG_OFFICER" inherits="ChatConfigCheckButtonTemplate">
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="$parentCHAT_MSG_GUILD" relativePoint="BOTTOMLEFT">
+					<Anchor point="TOPLEFT" relativeTo="$parentCHAT_MSG_GUILD"
+						relativePoint="BOTTOMLEFT">
 						<Offset>
-							<AbsDimension x="0" y="0"/>
+							<AbsDimension x="0" y="0" />
 						</Offset>
 					</Anchor>
 				</Anchors>
@@ -181,11 +194,13 @@ Revert PowaBarSliderTemplate to inherit from OptionsSliderTemplate if it's fixed
 					</OnClick>
 				</Scripts>
 			</CheckButton>
-			<CheckButton name="$parentCHAT_MSG_WHISPER" inherits="ChatConfigCheckButtonTemplate">
+			<CheckButton
+				name="$parentCHAT_MSG_WHISPER" inherits="ChatConfigCheckButtonTemplate">
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="$parentCHAT_MSG_SAY" relativePoint="TOPRIGHT">
+					<Anchor point="TOPLEFT" relativeTo="$parentCHAT_MSG_SAY"
+						relativePoint="TOPRIGHT">
 						<Offset>
-							<AbsDimension x="150" y="0"/>
+							<AbsDimension x="150" y="0" />
 						</Offset>
 					</Anchor>
 				</Anchors>
@@ -198,11 +213,13 @@ Revert PowaBarSliderTemplate to inherit from OptionsSliderTemplate if it's fixed
 					</OnClick>
 				</Scripts>
 			</CheckButton>		
-			<CheckButton name="$parentCHAT_MSG_PARTY" inherits="ChatConfigCheckButtonTemplate">
+			<CheckButton
+				name="$parentCHAT_MSG_PARTY" inherits="ChatConfigCheckButtonTemplate">
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="$parentCHAT_MSG_WHISPER" relativePoint="BOTTOMLEFT">
+					<Anchor point="TOPLEFT" relativeTo="$parentCHAT_MSG_WHISPER"
+						relativePoint="BOTTOMLEFT">
 						<Offset>
-							<AbsDimension x="0" y="0"/>
+							<AbsDimension x="0" y="0" />
 						</Offset>
 					</Anchor>
 				</Anchors>
@@ -213,13 +230,15 @@ Revert PowaBarSliderTemplate to inherit from OptionsSliderTemplate if it's fixed
 					<OnClick>
 						Emoticons_SetType("CHAT_MSG_PARTY",self:GetChecked());
 					</OnClick>
-				</Scripts>			
+				</Scripts>
 			</CheckButton>
-			<CheckButton name="$parentCHAT_MSG_RAID" inherits="ChatConfigCheckButtonTemplate">
+			<CheckButton
+				name="$parentCHAT_MSG_RAID" inherits="ChatConfigCheckButtonTemplate">
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="$parentCHAT_MSG_PARTY" relativePoint="BOTTOMLEFT">
+					<Anchor point="TOPLEFT" relativeTo="$parentCHAT_MSG_PARTY"
+						relativePoint="BOTTOMLEFT">
 						<Offset>
-							<AbsDimension x="0" y="0"/>
+							<AbsDimension x="0" y="0" />
 						</Offset>
 					</Anchor>
 				</Anchors>
@@ -232,11 +251,13 @@ Revert PowaBarSliderTemplate to inherit from OptionsSliderTemplate if it's fixed
 					</OnClick>
 				</Scripts>
 			</CheckButton>
-			<CheckButton name="$parentCHAT_MSG_CHANNEL" inherits="ChatConfigCheckButtonTemplate">
+			<CheckButton
+				name="$parentCHAT_MSG_CHANNEL" inherits="ChatConfigCheckButtonTemplate">
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="$parentCHAT_MSG_RAID" relativePoint="BOTTOMLEFT">
+					<Anchor point="TOPLEFT" relativeTo="$parentCHAT_MSG_RAID"
+						relativePoint="BOTTOMLEFT">
 						<Offset>
-							<AbsDimension x="0" y="0"/>
+							<AbsDimension x="0" y="0" />
 						</Offset>
 					</Anchor>
 				</Anchors>
@@ -248,8 +269,9 @@ Revert PowaBarSliderTemplate to inherit from OptionsSliderTemplate if it's fixed
 						Emoticons_SetType("CHAT_MSG_CHANNEL",self:GetChecked());
 					</OnClick>
 				</Scripts>
-			</CheckButton>.
-			<!-- <CheckButton name="$parentCHAT_MSG_BN_WHISPER" inherits="ChatConfigCheckButtonTemplate">
+			</CheckButton>
+			. <!-- <CheckButton name="$parentCHAT_MSG_BN_WHISPER"
+			inherits="ChatConfigCheckButtonTemplate">
 				<Anchors>
 					<Anchor point="TOPLEFT" relativeTo="$parentCHAT_MSG_WHISPER" relativePoint="TOPRIGHT">
 						<Offset>
@@ -266,7 +288,8 @@ Revert PowaBarSliderTemplate to inherit from OptionsSliderTemplate if it's fixed
 					</OnClick>
 				</Scripts>
 			</CheckButton> -->
-			<!-- <CheckButton name="$parentCHAT_MSG_BN_CONVERSATION" inherits="ChatConfigCheckButtonTemplate">
+			<!-- <CheckButton name="$parentCHAT_MSG_BN_CONVERSATION"
+			inherits="ChatConfigCheckButtonTemplate">
 				<Anchors>
 					<Anchor point="TOPLEFT" relativeTo="$parentCHAT_MSG_BN_WHISPER" relativePoint="BOTTOMLEFT">
 						<Offset>
@@ -283,7 +306,8 @@ Revert PowaBarSliderTemplate to inherit from OptionsSliderTemplate if it's fixed
 					</OnClick>
 				</Scripts>
 			</CheckButton> -->
-			<!--<CheckButton name="$parentEyecandy" inherits="InterfaceOptionsCheckButtonTemplate">
+			<!--<CheckButton
+			name="$parentEyecandy" inherits="InterfaceOptionsCheckButtonTemplate">
 				<Anchors>
 					<Anchor point="TOPLEFT" relativeTo="$parentCHAT_MSG_BN_WHISPER" relativePoint="BOTTOMLEFT">
 						<Offset>
@@ -302,9 +326,10 @@ Revert PowaBarSliderTemplate to inherit from OptionsSliderTemplate if it's fixed
 			</CheckButton>-->
 			<CheckButton name="$parentMAIL" inherits="ChatConfigCheckButtonTemplate">
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="$parentCHAT_MSG_BN_CONVERSATION" relativePoint="BOTTOMLEFT">
+					<Anchor point="TOPLEFT" relativeTo="$parentCHAT_MSG_BN_CONVERSATION"
+						relativePoint="BOTTOMLEFT">
 						<Offset>
-							<AbsDimension x="0" y="0"/>
+							<AbsDimension x="0" y="0" />
 						</Offset>
 					</Anchor>
 				</Anchors>
@@ -317,34 +342,39 @@ Revert PowaBarSliderTemplate to inherit from OptionsSliderTemplate if it's fixed
 					</OnClick>
 				</Scripts>
 			</CheckButton>
-			<Frame name="$parentTrenner">
+			<Frame
+				name="$parentTrenner">
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="$parentCHAT_MSG_OFFICER" relativePoint="BOTTOMLEFT">
+					<Anchor point="TOPLEFT" relativeTo="$parentCHAT_MSG_OFFICER"
+						relativePoint="BOTTOMLEFT">
 						<Offset>
-							<AbsDimension x="0" y="-8"/>
+							<AbsDimension x="0" y="-8" />
 						</Offset>
 					</Anchor>
 				</Anchors>
 				<Size>
 					<AbsDimension x="600"
-							y="16" />
+						y="16" />
 				</Size>
-				
+
 				<Layers>
 					<Layer level="ARTWORK">
-						<FontString name="$parentText" text="Chatwindow Button" inherits="GameFontNormal" nonSpaceWrap="true" maxLines="1" justifyh="Center" justifyv="TOP">
+						<FontString name="$parentText" text="Chatwindow Button"
+							inherits="GameFontNormal" nonSpaceWrap="true" maxLines="1"
+							justifyh="Center" justifyv="TOP">
 							<Size>
-								<AbsDimension x="800" y="16"/>
+								<AbsDimension x="800" y="16" />
 							</Size>
 							<Anchors>
-								<Anchor point="TOPLEFT" relativeTo="$parentTrenner" relativePoint="BOTTOMLEFT">
+								<Anchor point="TOPLEFT" relativeTo="$parentTrenner"
+									relativePoint="BOTTOMLEFT">
 									<Offset>
-										<AbsDimension x="0" y="2"/>
+										<AbsDimension x="0" y="2" />
 									</Offset>
 								</Anchor>
 								<Anchor point="RIGHT">
 									<Offset>
-										<AbsDimension x="0" y="2"/>
+										<AbsDimension x="0" y="2" />
 									</Offset>
 								</Anchor>
 							</Anchors>
@@ -353,12 +383,12 @@ Revert PowaBarSliderTemplate to inherit from OptionsSliderTemplate if it's fixed
 					<Layer level="BACKGROUND">
 						<Texture name="retete" file="Interface/CHATFRAME/UI-ChatFrame-BorderTop">
 							<Size>
-								<AbsDimension x="115" y="16"/>
+								<AbsDimension x="115" y="16" />
 							</Size>
 							<Anchors>
 								<Anchor point="TOPLEFT">
 									<Offset>
-										<AbsDimension x="-5" y="0"/>
+										<AbsDimension x="-5" y="0" />
 									</Offset>
 								</Anchor>
 							</Anchors>
@@ -367,23 +397,25 @@ Revert PowaBarSliderTemplate to inherit from OptionsSliderTemplate if it's fixed
 					<Layer level="OVERLAY">
 						<Texture file="">
 							<Size>
-								<AbsDimension x="115" y="16"/>
+								<AbsDimension x="115" y="16" />
 							</Size>
 							<Anchors>
-								<Anchor point="TOPRIGHT"/>
+								<Anchor point="TOPRIGHT" />
 								<Offset>
-									<AbsDimension x="500" y="0"/>
+									<AbsDimension x="500" y="0" />
 								</Offset>
 							</Anchors>
 						</Texture>
 					</Layer>
 				</Layers>
 			</Frame>
-			<CheckButton name="$parentTWITCHBUTTON" inherits="ChatConfigCheckButtonTemplate">
+			<CheckButton
+				name="$parentTWITCHBUTTON" inherits="ChatConfigCheckButtonTemplate">
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="$parentCHAT_MSG_OFFICER" relativePoint="BOTTOMLEFT">
+					<Anchor point="TOPLEFT" relativeTo="$parentCHAT_MSG_OFFICER"
+						relativePoint="BOTTOMLEFT">
 						<Offset>
-							<AbsDimension x="0" y="-24"/>
+							<AbsDimension x="0" y="-24" />
 						</Offset>
 					</Anchor>
 				</Anchors>
@@ -397,81 +429,90 @@ Revert PowaBarSliderTemplate to inherit from OptionsSliderTemplate if it's fixed
 				</Scripts>
 			</CheckButton>
 		
-			<Slider name="SliderX" minValue="-500" maxValue="500" valueStep="1" defaultValue="-25" inherits="PowaBarSliderTemplate">
+			<Slider
+				name="SliderX" minValue="-500" maxValue="500" valueStep="1" defaultValue="-25"
+				inherits="PowaBarSliderTemplate">
 				<Size>
-					<AbsDimension x="160" y="16"/>
+					<AbsDimension x="160" y="16" />
 				</Size>
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="$parentTWITCHBUTTON" relativePoint="BOTTOMLEFT">
+					<Anchor point="TOPLEFT" relativeTo="$parentTWITCHBUTTON"
+						relativePoint="BOTTOMLEFT">
 						<Offset>
-							<AbsDimension x="0" y="-8"/>
+							<AbsDimension x="0" y="-8" />
 						</Offset>
 					</Anchor>
 				</Anchors>
-				<Scripts> 
+				<Scripts>
 					<OnLoad>
 						SliderXText:SetText("Position X: "..self:GetValue());
-						SliderXLow:SetText("-500"); 
+			SliderXLow:SetText("-500");
 						SliderXHigh:SetText("500");
 					</OnLoad>
 					<OnValueChanged>
 						Emoticons_SetPosition(self:GetValue(), Emoticons_Settings["sliderY"]);
-						SliderXText:SetText("Position X: "..self:GetValue());
+			SliderXText:SetText("Position X: "..self:GetValue());
 					</OnValueChanged>
 				</Scripts>
 			</Slider>
 			
-			<Slider name="SliderY" minValue="-500" maxValue="500" valueStep="1" defaultValue="0" inherits="PowaBarSliderTemplate">
+			<Slider
+				name="SliderY" minValue="-500" maxValue="500" valueStep="1" defaultValue="0"
+				inherits="PowaBarSliderTemplate">
 				<Size>
-					<AbsDimension x="160" y="16"/>
+					<AbsDimension x="160" y="16" />
 				</Size>
 				<Anchors>
 					<Anchor point="TOPLEFT" relativeTo="SliderX" relativePoint="TOPLEFT">
 						<Offset>
-							<AbsDimension x="160" y="0"/>
+							<AbsDimension x="160" y="0" />
 						</Offset>
 					</Anchor>
 				</Anchors>
-				<Scripts> 
+				<Scripts>
 					<OnLoad>
 						SliderYText:SetText("Position Y: "..self:GetValue());
-						SliderYLow:SetText("-500"); 
+			SliderYLow:SetText("-500");
 						SliderYHigh:SetText("500");
 					</OnLoad>
 					<OnValueChanged>
 						Emoticons_SetPosition(Emoticons_Settings["sliderX"], self:GetValue());
-						SliderYText:SetText("Position Y: "..self:GetValue());
+			SliderYText:SetText("Position Y: "..self:GetValue());
 					</OnValueChanged>
 				</Scripts>
 			</Slider>
-			<Frame name="$parentTrenner2">
+			<Frame
+				name="$parentTrenner2">
 				<Anchors>
 					<Anchor point="TOPLEFT" relativeTo="SliderX" relativePoint="BOTTOMLEFT">
 						<Offset>
-							<AbsDimension x="0" y="-40"/>
+							<AbsDimension x="0" y="-40" />
 						</Offset>
 					</Anchor>
 				</Anchors>
 				<Size>
 					<AbsDimension x="600"
-							y="16" />
+						y="16" />
 				</Size>
-				
+
 				<Layers>
 					<Layer level="ARTWORK">
-						<FontString name="$parentTextmm" text="Minimap Button" inherits="GameFontNormal" nonSpaceWrap="true" maxLines="1" justifyh="Center" justifyv="TOP">
+						<FontString name="$parentTextmm" text="Minimap Button"
+							inherits="GameFontNormal" nonSpaceWrap="true" maxLines="1"
+							justifyh="Center" justifyv="TOP">
 							<Size>
-								<AbsDimension x="800" y="2"/>
+								<AbsDimension x="800" y="2" />
 							</Size>
 							<Anchors>
-								<Anchor point="TOPLEFT" relativeTo="$parentTrenner2" relativePoint="BOTTOMLEFT">
+								<Anchor point="TOPLEFT" relativeTo="$parentTrenner2"
+									relativePoint="BOTTOMLEFT">
 									<Offset>
-										<AbsDimension x="0" y="8"/>
+										<AbsDimension x="0" y="8" />
 									</Offset>
 								</Anchor>
 								<Anchor point="RIGHT">
 									<Offset>
-										<AbsDimension x="0" y="8"/>
+										<AbsDimension x="0" y="8" />
 									</Offset>
 								</Anchor>
 							</Anchors>
@@ -480,12 +521,12 @@ Revert PowaBarSliderTemplate to inherit from OptionsSliderTemplate if it's fixed
 					<Layer level="BACKGROUND">
 						<Texture name="retete" file="Interface/CHATFRAME/UI-ChatFrame-BorderTop">
 							<Size>
-								<AbsDimension x="115" y="16"/>
+								<AbsDimension x="115" y="16" />
 							</Size>
 							<Anchors>
 								<Anchor point="TOPLEFT">
 									<Offset>
-										<AbsDimension x="-5" y="0"/>
+										<AbsDimension x="-5" y="0" />
 									</Offset>
 								</Anchor>
 							</Anchors>
@@ -494,20 +535,21 @@ Revert PowaBarSliderTemplate to inherit from OptionsSliderTemplate if it's fixed
 					<Layer level="OVERLAY">
 						<Texture file="">
 							<Size>
-								<AbsDimension x="240" y="16"/>
+								<AbsDimension x="240" y="16" />
 							</Size>
 							<Anchors>
-								<Anchor point="TOPRIGHT"/>
+								<Anchor point="TOPRIGHT" />
 							</Anchors>
 						</Texture>
 					</Layer>
 				</Layers>
 			</Frame>
-			<CheckButton name="$parentMINIMAPBUTTON" inherits="InterfaceOptionsCheckButtonTemplate">
+			<CheckButton
+				name="$parentMINIMAPBUTTON" inherits="InterfaceOptionsCheckButtonTemplate">
 				<Anchors>
 					<Anchor point="TOPLEFT" relativeTo="SliderX" relativePoint="BOTTOMLEFT">
 						<Offset>
-							<AbsDimension x="0" y="-56"/>
+							<AbsDimension x="0" y="-56" />
 						</Offset>
 					</Anchor>
 				</Anchors>
@@ -520,34 +562,39 @@ Revert PowaBarSliderTemplate to inherit from OptionsSliderTemplate if it's fixed
 					</OnClick>
 				</Scripts>
 			</CheckButton>
-			<Frame name="$parentTrenner3">
+			<Frame
+				name="$parentTrenner3">
 				<Anchors>
-					<Anchor point="TOPLEFT" relativeTo="$parentMINIMAPBUTTON" relativePoint="BOTTOMLEFT">
+					<Anchor point="TOPLEFT" relativeTo="$parentMINIMAPBUTTON"
+						relativePoint="BOTTOMLEFT">
 						<Offset>
-							<AbsDimension x="0" y="-8"/>
+							<AbsDimension x="0" y="-8" />
 						</Offset>
 					</Anchor>
 				</Anchors>
 				<Size>
 					<AbsDimension x="600"
-							y="16" />
+						y="16" />
 				</Size>
-				
+
 				<Layers>
 					<Layer level="ARTWORK">
-						<FontString name="$parentTextfav" text="Favorite List" inherits="GameFontNormal" nonSpaceWrap="true" maxLines="1" justifyh="Center" justifyv="TOP">
+						<FontString name="$parentTextfav" text="Favorite List"
+							inherits="GameFontNormal" nonSpaceWrap="true" maxLines="1"
+							justifyh="Center" justifyv="TOP">
 							<Size>
-								<AbsDimension x="800" y="2"/>
+								<AbsDimension x="800" y="2" />
 							</Size>
 							<Anchors>
-								<Anchor point="TOPLEFT" relativeTo="$parentTrenner3" relativePoint="BOTTOMLEFT">
+								<Anchor point="TOPLEFT" relativeTo="$parentTrenner3"
+									relativePoint="BOTTOMLEFT">
 									<Offset>
-										<AbsDimension x="0" y="8"/>
+										<AbsDimension x="0" y="8" />
 									</Offset>
 								</Anchor>
 								<Anchor point="RIGHT">
 									<Offset>
-										<AbsDimension x="0" y="8"/>
+										<AbsDimension x="0" y="8" />
 									</Offset>
 								</Anchor>
 							</Anchors>
@@ -556,12 +603,12 @@ Revert PowaBarSliderTemplate to inherit from OptionsSliderTemplate if it's fixed
 					<Layer level="BACKGROUND">
 						<Texture name="retete" file="Interface/CHATFRAME/UI-ChatFrame-BorderTop">
 							<Size>
-								<AbsDimension x="115" y="16"/>
+								<AbsDimension x="115" y="16" />
 							</Size>
 							<Anchors>
 								<Anchor point="TOPLEFT">
 									<Offset>
-										<AbsDimension x="-5" y="0"/>
+										<AbsDimension x="-5" y="0" />
 									</Offset>
 								</Anchor>
 							</Anchors>
@@ -570,10 +617,10 @@ Revert PowaBarSliderTemplate to inherit from OptionsSliderTemplate if it's fixed
 					<Layer level="OVERLAY">
 						<Texture file="">
 							<Size>
-								<AbsDimension x="240" y="16"/>
+								<AbsDimension x="240" y="16" />
 							</Size>
 							<Anchors>
-								<Anchor point="TOPRIGHT"/>
+								<Anchor point="TOPRIGHT" />
 							</Anchors>
 						</Texture>
 					</Layer>
@@ -582,84 +629,92 @@ Revert PowaBarSliderTemplate to inherit from OptionsSliderTemplate if it's fixed
 		</Frames>
 	</Frame>
 	<Frame name="EmoticonChatFrameDropDown" inherits="Lib_UIDropDownMenuTemplate" id="1">
-       <Scripts>
-           <OnLoad>
-               Lib_UIDropDownMenu_Initialize(self, Emoticons_LoadChatFrameDropdown, "MENU",1);
-           </OnLoad>
-       </Scripts>
-   </Frame>
-   <Button name="TestButton" parent="ChatFrame1EditBox" enableMouse="true" movable="true" hidden="false">
-    <Size>
-        <AbsDimension x="24" y="24"/>
-    </Size>
-    <Anchors>
-        <Anchor point="LEFT" relativeTo="ChatFrame1EditBox" relativePoint="LEFT" offsetX="5" offsetY="0"/>
-    </Anchors>
-    <Layers>
-        <Layer level="BACKGROUND">
-            <Texture name="TestButton_NormalTexture" file="Interface\AddOns\SuperEmotes\Emoji\emSmiley.tga">
-                <Size>
-                    <AbsDimension x="24" y="24"/>
-                </Size>
-            </Texture>
-        </Layer>
-        <Layer level="HIGHLIGHT">
-            <Texture name="TestButton_HighlightTexture" file="Interface\AddOns\SuperEmotes\Emoji\emSmiley.tga">
-                <Size>
-                    <AbsDimension x="24" y="24"/>
-                </Size>
-            </Texture>
-        </Layer>
-        <Layer level="PUSHED">
-            <Texture name="TestButton_PushedTexture" file="Interface\AddOns\SuperEmotes\Emoji\emSmiley.tga">
-                <Size>
-                    <AbsDimension x="24" y="24"/>
-                </Size>
-            </Texture>
-        </Layer>
-        <Layer level="DISABLED">
-            <Texture name="TestButton_DisabledTexture" file="Interface\AddOns\SuperEmotes\Emoji\emSmiley.tga">
-                <Size>
-                    <AbsDimension x="24" y="24"/>
-                </Size>
-            </Texture>
-        </Layer>
-    </Layers>
-    <Scripts>
-        <OnLoad>
-            self:RegisterForClicks("LeftButtonDown")
-            self:RegisterForDrag("LeftButton")
-        </OnLoad>
-        <OnClick>
-            Lib_ToggleDropDownMenu(1, nil, EmoticonChatFrameDropDown, self, 0, 0)
-        </OnClick>
-        <OnDragStart>
-            if IsControlKeyDown() then
-                self:StartMoving()
-            end
-        </OnDragStart>
-        <OnDragStop>
-            self:StopMovingOrSizing()
-        </OnDragStop>
-    </Scripts>
-</Button>
-   	<Button name="MyMod_MinimapButton" parent="Minimap" enableMouse="true" movable="true" hidden="false">
+		<Scripts>
+			<OnLoad>
+				Lib_UIDropDownMenu_Initialize(self, Emoticons_LoadChatFrameDropdown, "MENU",1);
+			</OnLoad>
+		</Scripts>
+	</Frame>
+	<Button name="TestButton" parent="ChatFrame1EditBox" enableMouse="true" movable="true"
+		hidden="false">
 		<Size>
-			<AbsDimension x="33" y="33"/>
+			<AbsDimension x="24" y="24" />
 		</Size>
 		<Anchors>
-			<Anchor point="TOPLEFT"/>
+			<Anchor point="LEFT" relativeTo="ChatFrame1EditBox" relativePoint="LEFT" offsetX="5"
+				offsetY="0" />
 		</Anchors>
 		<Layers>
 			<Layer level="BACKGROUND">
-				<Texture name="MyMod_MinimapButton_Icon" file="Interface\AddOns\SuperEmotes\Emoji\emSmiley.tga">
+				<Texture name="TestButton_NormalTexture"
+					file="Interface\AddOns\SuperEmotes\Emoji\emSmiley.tga">
 					<Size>
-						<AbsDimension x="21" y="21"/>
+						<AbsDimension x="24" y="24" />
+					</Size>
+				</Texture>
+			</Layer>
+			<Layer level="HIGHLIGHT">
+				<Texture name="TestButton_HighlightTexture"
+					file="Interface\AddOns\SuperEmotes\Emoji\emSmiley.tga">
+					<Size>
+						<AbsDimension x="24" y="24" />
+					</Size>
+				</Texture>
+			</Layer>
+			<Layer level="PUSHED">
+				<Texture name="TestButton_PushedTexture"
+					file="Interface\AddOns\SuperEmotes\Emoji\emSmiley.tga">
+					<Size>
+						<AbsDimension x="24" y="24" />
+					</Size>
+				</Texture>
+			</Layer>
+			<Layer level="DISABLED">
+				<Texture name="TestButton_DisabledTexture"
+					file="Interface\AddOns\SuperEmotes\Emoji\emSmiley.tga">
+					<Size>
+						<AbsDimension x="24" y="24" />
+					</Size>
+				</Texture>
+			</Layer>
+		</Layers>
+		<Scripts>
+			<OnLoad>
+				self:RegisterForClicks("LeftButtonDown")
+				self:RegisterForDrag("LeftButton")
+			</OnLoad>
+			<OnClick>
+				Lib_ToggleDropDownMenu(1, nil, EmoticonChatFrameDropDown, self, 0, 0)
+			</OnClick>
+			<OnDragStart>
+				if IsControlKeyDown() then
+				self:StartMoving()
+				end
+			</OnDragStart>
+			<OnDragStop>
+				self:StopMovingOrSizing()
+			</OnDragStop>
+		</Scripts>
+	</Button>
+	<Button name="MyMod_MinimapButton" parent="Minimap" enableMouse="true" movable="true"
+		hidden="false">
+		<Size>
+			<AbsDimension x="33" y="33" />
+		</Size>
+		<Anchors>
+			<Anchor point="TOPLEFT" />
+		</Anchors>
+		<Layers>
+			<Layer level="BACKGROUND">
+				<Texture name="MyMod_MinimapButton_Icon"
+					file="Interface\AddOns\SuperEmotes\Emoji\emSmiley.tga">
+					<Size>
+						<AbsDimension x="21" y="21" />
 					</Size>
 					<Anchors>
 						<Anchor point="TOPLEFT">
 							<Offset>
-								<AbsDimension x="7" y="-6"/>
+								<AbsDimension x="7" y="-6" />
 							</Offset>
 						</Anchor>
 					</Anchors>
@@ -668,10 +723,10 @@ Revert PowaBarSliderTemplate to inherit from OptionsSliderTemplate if it's fixed
 			<Layer level="OVERLAY">
 				<Texture file="Interface\Minimap\MiniMap-TrackingBorder">
 					<Size>
-						<AbsDimension x="56" y="56"/>
+						<AbsDimension x="56" y="56" />
 					</Size>
 					<Anchors>
-						<Anchor point="TOPLEFT"/>
+						<Anchor point="TOPLEFT" />
 					</Anchors>
 				</Texture>
 			</Layer>
@@ -685,12 +740,12 @@ Revert PowaBarSliderTemplate to inherit from OptionsSliderTemplate if it's fixed
 				</Scripts>
 			</Frame>
 		</Frames>
-		<HighlightTexture alphaMode="ADD" file="Interface\Minimap\UI-Minimap-ZoomButton-Highlight"/>
+		<HighlightTexture alphaMode="ADD" file="Interface\Minimap\UI-Minimap-ZoomButton-Highlight" />
 		<Scripts>
 			<OnLoad>
 				self:RegisterForClicks("LeftButtonUp","RightButtonUp")
 				self:RegisterForDrag("LeftButton","RightButton")
-				
+
 			</OnLoad>
 			<OnDragStart>
 				self:LockHighlight()
