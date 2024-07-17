@@ -638,11 +638,15 @@ Revert PowaBarSliderTemplate to inherit from OptionsSliderTemplate if it's fixed
 	<Button name="TestButton" parent="ChatFrame1EditBox" enableMouse="true" movable="true"
 		hidden="false">
 		<Size>
-			<AbsDimension x="24" y="24" />
+			<AbsDimension x="14" y="14" />
 		</Size>
 		<Anchors>
-			<Anchor point="LEFT" relativeTo="ChatFrame1EditBox" relativePoint="LEFT" offsetX="5"
-				offsetY="0" />
+			<Anchor point="RIGHT" relativeTo="ChatFrame1EditBox" relativePoint="RIGHT" offsetX="5"
+				offsetY="0">
+				<Offset>
+					<AbsDimension x="-15" y="0" />
+				</Offset>
+			</Anchor>
 		</Anchors>
 		<Layers>
 			<Layer level="BACKGROUND">
